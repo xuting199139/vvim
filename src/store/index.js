@@ -3,14 +3,15 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  activePath: 'home'  
+  activeIndex: sessionStorage.getItem('activeIndex') || 0  
 
 }
 
 const mutations = {
-  setActivePath(state, opt) {
-    state.activePath = opt
-    sessionStorage.setItem('activePath', opt)
+  setActiveIndex(state, opt) {
+    console.log(opt)
+    state.activeIndex = opt
+    sessionStorage.setItem('activeIndex', opt)
   }
 }
 

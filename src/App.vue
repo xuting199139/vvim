@@ -29,9 +29,14 @@
         ]
       }
     },
+    created() {
+      setTimeout(() => {
+        $tabbar.$emit('updateActive', Number(this.$store.state.activeIndex))
+      }, 100)
+    },
     methods: {
       menuClicked(menuIndex) {
-        console.log(menuIndex)
+        this.$store.commit('setActiveIndex', menuIndex)
       }
     },
 
@@ -41,12 +46,5 @@
   }
 </script>
 <style>
-  h2 {
-    font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
-    color: #888;
-  }
 
-  .page.has-navbar .page-content {
-    padding-top: 100px;
-  }
 </style>
