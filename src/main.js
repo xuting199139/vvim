@@ -1,3 +1,8 @@
+import Vue from 'vue'
+import Vonic from 'vonic'
+import routes from './router'
 
-import router from './router'
 
+Vue.use(Vonic.app, {
+	routes,
+})

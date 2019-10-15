@@ -1,26 +1,17 @@
-import Vue from 'vue'
-import Vonic from 'vonic'
-// Page Components
-import App from '../App.vue'
-import Home from '../page/Home'
-import Pay from '../page/pay'
-import Mine from '../page/mine'
 
 
 // Routes
 const routes = [
 	{ 
 		path: '/', 
-		component: App,
+		component: () => import('../App.vue'),
+		redirect: 'home',
 		children: [
-			{ path: 'home', component: Home },
-			{ path: 'pay', component: Pay },
-			{ path: 'mine', component: Mine },
+			{ path: 'home', component: () => import('../page/home') },
+			{ path: 'pay', component: () => import('../page/pay') },
+			{ path: 'mine', component: () => import('../page/mine') },
 		]
 	}
 ]
 
-Vue.use(Vonic.app, {
-	routes: routes
-})
-  
+export default routes
