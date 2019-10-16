@@ -1,5 +1,5 @@
 <template>
   <div>
-    支付
+    支付时代大厦所多
   </div>
 </template>
